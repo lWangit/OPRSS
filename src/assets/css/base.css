@@ -1,0 +1,77 @@
+@import "./normalize.css";
+
+/* 字体 */
+@font-face {
+  font-family: KS-R;
+  src: url(../font/KaushanScript-Regular.otf)
+}
+
+/* 定义变量 */
+:root {
+  --background-color: #00ff80;
+  --background-image1: url(https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  --background-image2: url(https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?cs=srgb&dl=pexels-lumn-167699.jpg&fm=jpg);
+  --color-text: black;
+  --font-size: 14px;
+  --line-height: 1.5;
+}
+
+/* 定义内外边距、盒模型 */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+/* body区域 */
+body {
+  font-family: 'Times New Roman', Helvetica, Georgia, 宋体, Sans-serif;
+  user-select: none;
+  /* 禁止用户选中 */
+  background: var(--background-color) var(--background-image1,--background-image2) no-repeat;
+  background-size: cover;
+  color: var(--color-text);
+  width: 100vw;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arial, Helvetica, 黑体;
+}
+
+/* 清除浮动 */
+.clear-fix::after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
+
+.clear-fix {
+  zoom: 1;
+}
+
+/* 定义浮动 */
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
