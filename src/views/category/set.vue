@@ -1,45 +1,61 @@
 <template>
   <div id="set" class="set">
     <h2>全局默认</h2>
-    <select @change="sDU($event)" name="defSel" id="defSel" class="defSel" v-model="dUN">
+    <select
+      @change="sDU($event)"
+      name="defSel"
+      id="defSel"
+      class="defSel"
+      v-model="dUName"
+    >
       <option value="">null</option>
       <optgroup label="search">
         <option
+          :id="'f' + urlName"
           v-for="(url, urlName) in this.urlList.search"
           :key="urlName"
-          :value="url"
+          :value="urlName"
+          :dU="url"
           >{{ urlName }}</option
         ></optgroup
       >
       <optgroup label="video">
         <option
+          :id="'f' + urlName"
+          :value="urlName"
           v-for="(url, urlName) in this.urlList.video"
           :key="urlName"
-          :value="url"
+          :dU="url"
           >{{ urlName }}</option
         ></optgroup
       >
       <optgroup label="music">
         <option
+          :id="'f' + urlName"
+          :value="urlName"
           v-for="(url, urlName) in this.urlList.music"
           :key="urlName"
-          :value="url"
+          :dU="url"
           >{{ urlName }}</option
         ></optgroup
       >
       <optgroup label="pic">
         <option
+          :id="'f' + urlName"
+          :value="urlName"
           v-for="(url, urlName) in this.urlList.pic"
           :key="urlName"
-          :value="url"
+          :dU="url"
           >{{ urlName }}</option
         ></optgroup
       >
       <optgroup label="map">
         <option
+          :id="'f' + urlName"
+          :value="urlName"
           v-for="(url, urlName) in this.urlList.map"
           :key="urlName"
-          :value="url"
+          :dU="url"
           >{{ urlName }}</option
         ></optgroup
       >
@@ -141,15 +157,15 @@ export default {
         pic: '',
         map: ''
       },
-      dUN: ''
+      dUName: ''
     }
   },
   methods: {
-    // 全局默认
-    sDU(){
-      localStorage.setItem('dU', this.dUN)
+    // 全局默认url
+    sDU(e) {
+      localStorage.setItem('dUN', e.target.value)
     },
-    // 页面默认
+    // 页面默认url
     sPDU(e) {
       localStorage.setItem('sPDUN', e.target.value)
     },
@@ -164,67 +180,51 @@ export default {
     },
     maPDU(e) {
       localStorage.setItem('maPDUN', e.target.value)
+    },
+    // 设置页面默认url处于选中状态
+    setSelected() {
+      let fDUN = localStorage.getItem('dUN')
+      if (fDUN) {
+        document.getElementById('f' + fDUN).selected = true
+      }
+      let pDUs = localStorage.getItem('sPDUN')
+      let pDUv = localStorage.getItem('vPDUN')
+      let pDUmu = localStorage.getItem('muPDUN')
+      let pDUp = localStorage.getItem('pPDUN')
+      let pDUma = localStorage.getItem('maPDUN')
+      document.getElementById(pDUs).selected = true
+      document.getElementById(pDUv).selected = true
+      document.getElementById(pDUmu).selected = true
+      document.getElementById(pDUp).selected = true
+      document.getElementById(pDUma).selected = true
+      document.getElementById(pDUma).selected = true
     }
   },
   computed: {
     // 获取store中的数据
-    ...mapState(['pDUN', 'dU', 'sVal', 'urlList']),
-    dU() {
-      return localStorage.getItem('dU')
-    },
-    pDUs() {
-      return localStorage.getItem('sPDUN')
-    },
-    pDUv() {
-      return localStorage.getItem('vPDUN')
-    },
-    pDUmu() {
-      return localStorage.getItem('muPDUN')
-    },
-    pDUp() {
-      return localStorage.getItem('pPDUN')
-    },
-    pDUma() {
-      return localStorage.getItem('maPDUN')
-    }
+    ...mapState(['sVal', 'urlList'])
+  },
+  updated() {
+    this.setSelected()
   },
   mounted() {
-    if (!this.pDUs) {
-      localStorage.setItem('sPDUN', 'Bing')
-    };
-    if (!this.pDUv) {
-      localStorage.setItem('vPDUN', 'IQIYI')
-    };
-    if (!this.pDUmu) {
-      localStorage.setItem('muPDUN', 'migu')
-    };
-    if (!this.pDUp) {
-      localStorage.setItem('pPDUN', 'colorhub')
-    };
-    if (!this.pDUma) {
-      localStorage.setItem('maPDUN', 'AMap')
-    };
-    document.getElementById(this.pDUs).setAttribute('selected', 'true')
-    document.getElementById(this.pDUv).setAttribute('selected', 'true')
-    document.getElementById(this.pDUmu).setAttribute('selected', 'true')
-    document.getElementById(this.pDUp).setAttribute('selected', 'true')
-    document.getElementById(this.pDUma).setAttribute('selected', 'true')
-    document.getElementById(this.pDUma).setAttribute('selected', 'true')
+    this.setSelected()
   }
 }
 </script>
 
 <style lang="stylus">
-h3
-select
+h3, select
   -webkit-transform translateX(10px)
   -ms-transform translateX(10px)
   -moz-transform translateX(10px)
   -o-transform translateX(10px)
   transform translateX(10px)
   width 100%
+
 .defSel
   margin 10px 0
+
 option
   font-size 16px
   padding 5px 20px

@@ -1,0 +1,109 @@
+.navBar
+  background #242424
+  box-shadow 0px 0px 0px .1px #fff inset
+  z-index 999
+  display -webkit-flex
+  display flex
+  order 2
+
+  ul
+    width 2em
+    list-style none
+    display -webkit-flex
+    display flex
+    flex-flow wrap
+    justify-content center
+    align-content flex-start
+
+    // 当前点击的导航图标
+    .router-link-active
+      background #0e918c
+      color #fff
+
+    .toggleBtn
+      margin-bottom 20px
+
+    // 导航图标
+    li
+      width 100%
+      color #d6d2c4
+      cursor pointer
+      padding 5px 0
+      margin-top 10px
+      line-height 1em
+      font-size 0.8em
+      text-align center
+      border-radius 5px
+      -webkit-transition background ease-out 0.3s
+      -moz-transition background ease-out 0.3s
+      -o-transition background ease-out 0.3s
+      transition background ease-out 0.3s
+      display -webkit-flex
+      display flex
+      flex-wrap wrap
+      justify-content center
+
+      &:hover
+        color #fff
+
+      // nav区域显示/隐藏控制按钮
+      .toggle
+        width 77%
+        height 3px
+        border-radius 1px
+        background #fff
+        display block
+        text-align center
+        position relative
+        transition all 0.3s
+
+      // nav区显示时，控制按钮的样式
+      .t2, .t3
+        margin-top 5px
+
+      .t1
+        -webkit-transform-origin 3px 0px
+        -moz-transform-origin 3px 0px
+        -o-transform-origin 3px 0px
+        transform-origin 3px 0px
+        -webkit-transform rotate(45deg) translateX(4px)
+        -moz-transform rotate(45deg) translateX(4px)
+        -o-transform rotate(45deg) translateX(4px)
+        transform rotate(45deg) translateX(4px)
+
+      .t2
+        opacity 0
+
+      .t3
+        -webkit-transform-origin 5px 5px
+        -moz-transform-origin 5px 5px
+        -o-transform-origin 5px 5px
+        transform-origin 5px 5px
+        -webkit-transform rotate(-45deg) translateX(4px)
+        -moz-transform rotate(-45deg) translateX(4px)
+        -o-transform rotate(-45deg) translateX(4px)
+        transform rotate(-45deg) translateX(4px)
+
+      // nav区隐藏时，控制按钮的样式
+      .rotate1
+        -webkit-transform-origin -1px top
+        -moz-transform-origin -1px top
+        -o-transform-origin -1px top
+        transform-origin -1px top
+        -webkit-transform rotate(0deg)
+        -moz-transform rotate(0deg)
+        -o-transform rotate(0deg)
+        transform rotate(0deg)
+
+      .rotate2
+        opacity 1
+
+      .rotate3
+        -webkit-transform-origin 1px bottom
+        -moz-transform-origin 1px bottom
+        -o-transform-origin 1px bottom
+        transform-origin 1px bottom
+        -webkit-transform rotate(0deg)
+        -moz-transform rotate(0deg)
+        -o-transform rotate(0deg)
+        transform rotate(0deg)

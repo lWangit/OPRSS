@@ -43,7 +43,7 @@ export default {
   font 900 22px / 1.5em 'KS-R'
 
   .aN
-    color #FF8C00
+    color #fff
     text-decoration none
 
     li
@@ -53,5 +53,5 @@ export default {
       list-style-image url('../../assets/img/newTag.svg')
 
     &:hover
-      color #fff
+      color #0e918c
 </style>

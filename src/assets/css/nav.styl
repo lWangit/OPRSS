@@ -1,0 +1,65 @@
+nav
+  width 20%
+  height 100%
+  color #fff
+  background #333333
+  align-self flex-start
+  display -webkit-flex
+  display flex
+  flex-wrap wrap
+  justify-content center
+  align-content flex-start
+  order 1
+
+  // 搜索输入框区域
+  .sWrap
+    align-self flex-start
+    display -webkit-flex
+    display flex
+    position relative
+
+    // 搜索框
+    .sBox
+      width 100%
+      padding 13px 40px 13px 14px
+      margin 10px
+      outline-style none
+      border 1px solid #ccc
+      border-radius 10px
+      font-size 16px
+      font-weight 700
+      font-family 'Microsoft soft'
+
+    // 搜索按钮
+    .sBtn
+      background transparent
+      text-decoration none
+      font-size 1.5em
+      border-radius 5px
+      align-self center
+      position absolute
+      right 12px
+
+      &:hover
+        color green
+
+// nav显示隐藏动画
+.slide-enter-active
+  -webkit-transition all 0.3s
+  -moz-transition all 0.3s
+  -o-transition all 0.3s
+  transition all 0.3s
+
+.slide-leave-active
+  -webkit-transition all 0.3s cubic-bezier(1, 0.5, 0.8, 1)
+  -moz-transition all 0.3s cubic-bezier(1, 0.5, 0.8, 1)
+  -o-transition all 0.3s cubic-bezier(1, 0.5, 0.8, 1)
+  transition all 0.3s cubic-bezier(1, 0.5, 0.8, 1)
+
+.slide-enter, .slide-leave-active
+  -webkit-transform translateX(30px)
+  -moz-transform translateX(30px)
+  -o-transform translateX(30px)
+  transform translateX(30px)
+  width 0
+  opacity 0

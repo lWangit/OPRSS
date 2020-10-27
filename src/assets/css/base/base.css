@@ -3,12 +3,13 @@
 /* 字体 */
 @font-face {
   font-family: KS-R;
-  src: url(../font/KaushanScript-Regular.otf)
+  src: url(../../font/KaushanScript-Regular.otf)
 }
 
 /* 定义变量 */
 :root {
   --background-color: #00ff80;
+  --background-image0: url(https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
   --background-image1: url(https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
   --background-image2: url(https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?cs=srgb&dl=pexels-lumn-167699.jpg&fm=jpg);
   --color-text: black;
@@ -38,10 +39,19 @@ body {
   font-family: 'Times New Roman', Helvetica, Georgia, 宋体, Sans-serif;
   user-select: none;
   /* 禁止用户选中 */
-  background: var(--background-color) var(--background-image1,--background-image2) no-repeat;
+  background: var(--background-color) var(--background-image0,--background-image1,--background-image2) no-repeat;
   background-size: cover;
   color: var(--color-text);
   width: 100vw;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-end;
 }
 
 h1,

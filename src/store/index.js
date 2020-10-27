@@ -56,13 +56,16 @@ const store = new Vuex.Store({
         haijie: 'https://seastmovie.com/?s=',
         yinfans: 'http://www.yinfans.me/?s=',
         LANGUANG: 'http://www.languang.co/?s=',
+        chapaofan: 'https://www.chapaofan.com/search/'
 
       },
       music: {
         NetEaseCloud: 'https://music.163.com/#/search/m/?s=',
         QQMusic: 'https://y.qq.com/portal/search.html#page=1&searchid=1&remoteplace=txt.yqq.top&t=song&w=',
         kugou: 'https://www.kugou.com/yy/html/search.html#searchType=song&searchKeyWord=',
-        migu: 'https://www.migu.cn/search.html?content='
+        migu: 'https://www.migu.cn/search.html?content=',
+        lastfm: 'https://www.last.fm/zh/search?q=',
+        streetvoice: 'https://streetvoice.cn/search/?q='
       },
       pic: {
         Unsplash: 'https://unsplash.com/s/photos/',
