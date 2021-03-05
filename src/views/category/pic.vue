@@ -41,7 +41,7 @@ export default {
 
 <style lang="stylus">
 .pic
-  font 900 22px / 1.5em 'KS-R'
+  font 900 22px / 1.5em 'Lobster'
 
   .aN
     color #fff

@@ -1,6 +1,6 @@
 <template>
   <div id="set" class="set">
-    <h2>全局默认</h2>
+    <h2>All</h2>
     <select
       @change="sDU($event)"
       name="defSel"
@@ -60,7 +60,7 @@
         ></optgroup
       >
     </select>
-    <h2>页面默认</h2>
+    <h2>Page</h2>
     <h3>search</h3>
     <select
       @change="sPDU($event)"
@@ -214,6 +214,9 @@ export default {
 </script>
 
 <style lang="stylus">
+h2, h3
+  font-family Lobster
+
 h3, select
   -webkit-transform translateX(10px)
   -ms-transform translateX(10px)
@@ -225,7 +228,13 @@ h3, select
 .defSel
   margin 10px 0
 
+select
+  outline none
+  border-radius 4px
+  margin-bottom 5px
+
 option
+  border-radius 4px
   font-size 16px
   padding 5px 20px
   width 100%

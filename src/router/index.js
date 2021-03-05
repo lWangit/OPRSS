@@ -17,42 +17,42 @@ const routes = [{
   {
     path: '/search',
     meta: {
-      title: '搜索'
+      title: 'search'
     },
     component: search
   },
   {
     path: '/video',
     meta: {
-      title: '视频'
+      title: 'video'
     },
     component: video
   },
   {
     path: '/music',
     meta: {
-      title: '音乐'
+      title: 'music'
     },
     component: music
   },
   {
     path: '/pic',
     meta: {
-      title: '图片'
+      title: 'pic'
     },
     component: pic
   },
   {
     path: '/map/',
     meta: {
-      title: '地图'
+      title: 'map'
     },
     component: map
   },
   {
     path: '/set/',
     meta: {
-      title: '设置'
+      title: 'set'
     },
     component: set
   }

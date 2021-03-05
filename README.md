@@ -1,7 +1,7 @@
 # OPRSS
 > A resource aggregation site
 
-[Demo](http://pi-c.top/OPRSS/)
+[Demo](http://https://lwangit.github.io/OPRSS/)
 
 ### Feature
 

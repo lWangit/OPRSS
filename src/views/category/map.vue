@@ -40,7 +40,7 @@ export default {
 
 <style lang="stylus">
 .map
-  font 900 22px / 1.5em 'KS-R'
+  font 900 22px / 1.5em 'Lobster'
 
   .aN
     color #fff
